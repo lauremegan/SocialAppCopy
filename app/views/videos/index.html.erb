@@ -1,0 +1,24 @@
+<h1>Listing videos</h1>
+<br/>
+<%= link_to 'New Video', new_video_path %>
+
+
+
+<% @videos.each do |video| %> 
+<div class="list">
+<%= video.title %>
+<br />
+  
+  <%= sanitize_embed_code video %>
+</p>
+  <%# link_to 'Show', video %>
+  <%# link_to 'Edit', edit_video_path(video) %>
+ <%# link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete %>
+  
+ </div>
+<% end %>
+
+
+
+
+
