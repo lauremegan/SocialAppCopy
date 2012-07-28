@@ -15,14 +15,15 @@ group :development, :test do
  # group :test do
 end
 #gem 'annotate', '~> 2.4.1.beta'
-group :test do
+#group :test do
 
 #Factory Girl is only needed in the tests, 
 #we’ve put it in the :test group.)
-	gem 'factory_girl_rails', '1.4.0'
-  end
+gem 'factory_girl_rails', '1.4.0'
+	
+ # end
   
-gem 'annotate', '~> 2.4.1.beta', group: :development
+#gem 'annotate', '~> 2.4.1.beta', group: :development
 
 
 #group :test do (not working: 28/07/2012
@@ -41,6 +42,10 @@ gem 'jquery-rails', '2.0.0'
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'cucumber-rails', '1.2.1', require: false
+  gem 'database_cleaner', '0.7.0'
+  
+  
 end
 
 group :production do
