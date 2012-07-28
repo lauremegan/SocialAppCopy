@@ -5,6 +5,8 @@ SampleApp::Application.routes.draw do
   # removed get "users/new"
   resources :users
 
+  match "static_pages/about"
+  resources :abouts
   root :to => 'static_pages#home'
   get "static_pages/home"
  
@@ -13,12 +15,12 @@ SampleApp::Application.routes.draw do
 
   get "static_pages/help"
   
-  match "static_pages/about"
+  
   #resources :abouts
   
  # get "static_pages/contact"
- match "static_pages/contact"
- # resources :contact
+ get "static_pages/contact"
+ #resources :contacts
  
  get "static_pages/video"
 
