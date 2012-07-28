@@ -4,14 +4,16 @@ SampleApp::Application.routes.draw do
 
   # removed get "users/new"
   resources :users
+  
+   root :to => 'static_pages#home'
+  get "static_pages/home"
 
+  #old way 
+  #match '/signup',  :to => 'users#new'
+   match '/signup',  to: 'users#new'
+  
   match "static_pages/about"
   resources :abouts
-  root :to => 'static_pages#home'
-  get "static_pages/home"
- 
-  match '/signup',  :to => 'users#new'
- 
 
   get "static_pages/help"
   

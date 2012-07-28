@@ -16,6 +16,10 @@ group :development, :test do
 end
 #gem 'annotate', '~> 2.4.1.beta'
 group :test do
+
+#Factory Girl is only needed in the tests, 
+#we’ve put it in the :test group.)
+	gem 'factory_girl_rails', '1.4.0'
   end
   
 gem 'annotate', '~> 2.4.1.beta', group: :development
