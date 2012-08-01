@@ -50,8 +50,8 @@ class CommentsController < ApplicationController
         format.html { redirect_to(@article, notice: 'Comment was successfully created.') }
    
  #format.json { render json: @comment, status: :created, location: @comment }
-  #format.xml  { render :xml => @article, :status => :created, :location => @article }     
- format.xml  { render xml: @article, status: created:, location: @article }
+  format.xml  { render :xml => @article, :status => :created, :location => @article }     
+ #format.xml  { render xml: @article, status: created: location: @article }
 
 else
         #format.html { render action: "new" }
