@@ -1,27 +1,41 @@
 SampleApp::Application.routes.draw do
+  resources :comments
+
+  resources :articles
+
+   root :to => 'static_pages#home'
    
+  match '/help',    to: 'static_pages#help'
+  match '/about',   to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'
   resources :videos
 
   # removed get "users/new"
+  resources :abouts
   resources :users
   
-   root :to => 'static_pages#home'
-  get "static_pages/home"
+  # added from chp 8
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  
+  
+  #get "static_pages/home"
 
   #old way 
   #match '/signup',  :to => 'users#new'
-   match '/signup',  to: 'users#new'
+  #get "static_pages/about"
   
-  match "static_pages/about"
-  resources :abouts
 
-  get "static_pages/help"
+  
+  #get "static_pages/help"
   
   
   #resources :abouts
   
  # get "static_pages/contact"
- get "static_pages/contact"
+ #get "static_pages/contact"
  #resources :contacts
  
  get "static_pages/video"

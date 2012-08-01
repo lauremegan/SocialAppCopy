@@ -17,6 +17,14 @@
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>
+    
+   <div class= "container">
+  <div class="span-17 colborder" id="content">
+    <%= yield %>
+  </div>
+  <div class="span-4 last" id="sidebar"></div>
+</div> 
+    
   </body>
 </html>
 

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<% div_for comment do %>
+<p>
+  <b>Article:</b>
+  <%# @comment.article_id %>
+  <%= comment.article_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= comment.name %>
+  <%# @comment.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%# @comment.email %>
+  <%= comment.email %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%# @comment.body %>
+  <%= comment.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%# link_to 'Delete', article_comment_path(@article, comment), :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to 'Delete', article_comment_path(@article, comment), confirm: 'Are you sure?', method: delete: %>
+<%= link_to 'Back', comments_path %>

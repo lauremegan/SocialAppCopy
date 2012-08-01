@@ -1,5 +1,10 @@
 SampleApp::Application.routes.draw do
-   root :to => 'static_pages#home'
+  root :to => 'static_pages#home'
+  #resources :articles do
+  resources :articles 
+  resources :comments
+
+   
    
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
@@ -15,6 +20,8 @@ SampleApp::Application.routes.draw do
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+   
+ get "static_pages/video"
   
   
   #get "static_pages/home"
@@ -33,8 +40,7 @@ SampleApp::Application.routes.draw do
  # get "static_pages/contact"
  #get "static_pages/contact"
  #resources :contacts
- 
- get "static_pages/video"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -86,7 +92,7 @@ SampleApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-   root :to => 'static_pages#home'
+  # root :to => 'static_pages#home'
 
   # See how all your routes lay out with "rake routes"
 
@@ -94,3 +100,4 @@ SampleApp::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+#end

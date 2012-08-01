@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<%# render :partial => @article.comments %> 
+<%= render partial: @article.comments %>
+<p>
+  <b>Article:</b>
+  <%= @comment.article_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @comment.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @comment.email %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @comment.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%# link_to 'Delete', article_comment_path(@article, comment), :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to 'Delete', article_comment_path(@article, comment), confirm: 'Are you sure?', method: delete: %>
+<%= link_to 'Back', comments_path %>

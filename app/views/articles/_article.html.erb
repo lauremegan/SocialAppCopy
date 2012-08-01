@@ -1,0 +1,17 @@
+<p>
+  <b>Title:</b>
+  <%# @article.title %>
+  <%= article.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%# @article.body %>
+  <%= article.body %>
+</p>
+
+<%= link_to 'Show', article %>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to 'Back', articles_path %>
+
